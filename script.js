@@ -452,16 +452,20 @@ function renderWorkSection(container) {
             text: job.summary
         });
 
-        const highlightsList = createElement("ul");
+        // ✅ No <ul>/<li> now — just plain text lines
+        const highlightsContainer = createElement("div", {
+            className: "highlights-block"
+        });
+
         job.highlights.forEach((h) => {
-            const li = createElement("li", { text: h });
-            highlightsList.appendChild(li);
+            const p = createElement("p", { text: h });
+            highlightsContainer.appendChild(p);
         });
 
         card.appendChild(cardTitle);
         card.appendChild(cardSubtitle);
         card.appendChild(summary);
-        card.appendChild(highlightsList);
+        card.appendChild(highlightsContainer);
 
         cardList.appendChild(card);
     });
@@ -469,6 +473,7 @@ function renderWorkSection(container) {
     section.appendChild(cardList);
     container.appendChild(section);
 }
+
 
 function renderEducationSection(container) {
     const section = createElement("section", {

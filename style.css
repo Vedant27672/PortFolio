@@ -565,6 +565,12 @@ body.light-theme footer.site-footer {
     color: var(--text-muted);
 }
 
+.highlights-block p {
+    margin: 4px 0;
+    /* you can tweak font-size / color here too if needed */
+}
+
+
 /* Animations */
 
 @keyframes fadeInUp {
