@@ -117,7 +117,7 @@ const resumeData = {
             title: "IC3 2025 Paper Acceptance",
             detail:
                 "Paper on the PCOS Detection Tool accepted at the IC3 2025 conference, focusing on explainable AI in medical imaging.",
-            link: "https://drive.google.com/file/d/1flCYXc4-er98LBLAtULl6cCXiIYjtbIW/view?usp=sharing"
+            link: "https://drive.google.com/file/d/18CDeVRNe5u1YFrjGy5-y4NpHcm3ZXC1m/view?usp=drive_link"
         },
         {
             title: "Ride-Hack 2024 · Top 10",
