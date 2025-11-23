@@ -738,12 +738,7 @@ function renderFooter(container) {
         text: `Contact: ${resumeData.personalInfo.contact.email} | ${resumeData.personalInfo.contact.phone}`
     });
 
-    const right = createElement("span", {
-        text: "Built with ❤️ and vanilla JS"
-    });
-
     footer.appendChild(left);
-    footer.appendChild(right);
     container.appendChild(footer);
 }
 
