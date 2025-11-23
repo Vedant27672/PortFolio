@@ -116,7 +116,8 @@ const resumeData = {
         {
             title: "IC3 2025 Paper Acceptance",
             detail:
-                "Paper on the PCOS Detection Tool accepted at the IC3 2025 conference, focusing on explainable AI in medical imaging."
+                "Paper on the PCOS Detection Tool accepted at the IC3 2025 conference, focusing on explainable AI in medical imaging.",
+            link: "https://drive.google.com/file/d/1flCYXc4-er98LBLAtULl6cCXiIYjtbIW/view?usp=sharing"
         },
         {
             title: "Ride-Hack 2024 · Top 10",
@@ -131,11 +132,12 @@ const resumeData = {
         {
             title: "Full-Stack Web Dev",
             detail:
-                "Completed a full-stack web development course and put it into practice through real deployed projects."
+                "Completed a full-stack web development course and put it into practice through real deployed projects.",
+            link: "https://drive.google.com/file/d/1bL8lF9IzDSUDV381Z_tF4mNATMbVuWCX/view?usp=sharing"
         }
     ],
     resume: {
-        file: "", // from data.json
+        file: "", // from data.json if present
         displayName: "Resume_Vedant_Singh_213.pdf"
     }
 };
@@ -673,6 +675,21 @@ function renderAchievementsSection(container) {
 
         card.appendChild(cardTitle);
         card.appendChild(detail);
+
+        // If this achievement has a link, show a "View Document" anchor
+        if (ach.link) {
+            const linkEl = createElement("a", {
+                className: "card-link",
+                text: "View Document ↗",
+                attrs: {
+                    href: ach.link,
+                    target: "_blank",
+                    rel: "noopener noreferrer"
+                }
+            });
+            card.appendChild(linkEl);
+        }
+
         cardList.appendChild(card);
     });
 
