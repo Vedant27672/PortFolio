@@ -138,7 +138,7 @@ const resumeData = {
     ],
     resume: {
         file: "", // from data.json if present
-        displayName: "Resume_Vedant_Singh_213.pdf"
+        displayName: "Resume_Vedant_Singh_Chauhan_213.pdf.pdf"
     }
 };
 
@@ -165,7 +165,7 @@ function applyLinkConfig() {
         resumeData.resume.displayName = linkConfig.resumePdf;
     } else {
         // fallback
-        resumeData.resume.file = "Resume_Vedant_Singh_213.pdf";
+        resumeData.resume.file = "Resume_Vedant_Singh_Chauhan_213.pdf";
     }
 }
 
