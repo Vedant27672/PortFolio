@@ -26,7 +26,7 @@ const resumeData = {
         tagline:
             "I build Java Spring Boot microservices and event-driven data pipelines (Kafka, NiFi, AWS) that hold up at scale in production.",
         contact: {
-            email: "vedant.chauhan213@gmail.com",
+            email: "vedant2004chauhan@gmail.com",
             phone: "+91-8924029890"
         },
         status: "Immediate Joiner · Open to backend & data engineering roles"
