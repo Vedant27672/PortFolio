@@ -3,33 +3,33 @@ let linkConfig = {};
 
 // ------- STATS DATA ------- //
 const statsData = [
-    { value: 800, suffix: "+",   label: "Problems Solved", decimals: 0 },
-    { value: 3,   suffix: "",    label: "Projects Built",  decimals: 0 },
-    { value: 1,   suffix: "",    label: "Research Paper",  decimals: 0 },
-    { value: 8.0, suffix: "/10", label: "Current GPA",     decimals: 1 }
+    { value: 2.5, suffix: "M",   label: "Retailers Served",   decimals: 1 },
+    { value: 100, suffix: "K+",  label: "Outlets Onboarded",  decimals: 0 },
+    { value: 5,   suffix: "Cr+", label: "Records Processed/Day", decimals: 0 },
+    { value: 300, suffix: "ms",  label: "API Latency (p95)",  decimals: 0 }
 ];
 
 // ------- TYPING ANIMATION ROLES ------- //
 const typingRoles = [
-    "Software Engineer at Salescode.ai",
-    "Backend & API Developer",
-    "CS Student @ JIIT Noida",
-    "Open to Backend & ML Roles"
+    "Backend Software Engineer",
+    "Java · Spring Boot · Microservices",
+    "Kafka · NiFi · Event-Driven Pipelines",
+    "Immediate Joiner"
 ];
 
 // ------- DATA CONFIG ------- //
 const resumeData = {
     personalInfo: {
         name: "Vedant Singh Chauhan",
-        role: "Software Engineer at Salescode.ai",
-        location: "India",
+        role: "Backend Software Engineer",
+        location: "Gurgaon, Haryana, India",
         tagline:
-            "I enjoy designing reliable backends, clean APIs, and data-heavy systems that actually ship.",
+            "I build Java Spring Boot microservices and event-driven data pipelines (Kafka, NiFi, AWS) that hold up at scale in production.",
         contact: {
             email: "vedant.chauhan213@gmail.com",
             phone: "+91-8924029890"
         },
-        status: "Open to impactful backend, data, and ML opportunities"
+        status: "Immediate Joiner · Open to backend & data engineering roles"
     },
     profiles: [
         { key: "github",   name: "GitHub",   url: "", icon: "🐙" },
@@ -38,16 +38,21 @@ const resumeData = {
     ],
     workExperience: [
         {
-            role: "Software Engineer",
+            role: "Software Engineer (Backend)",
             company: "Salescode.ai",
-            location: "On-site",
+            location: "Gurgaon, Haryana · On-site",
             duration: "June 2025 – Present",
             summary:
-                "Part of a product team building microservice-based systems for data-heavy use cases. I mostly work with Java Spring Boot, MySQL, and internal data pipelines.",
+                "Building Java Spring Boot microservices and REST APIs for ITC Unnati, a B2B eCommerce platform serving 2.5M retailers/outlets, in a 6-member Agile team.",
             highlights: [
-                "Own development of several Spring Boot microservices used across the platform.",
-                "Automated internal reporting with Jasper Reports and optimized MySQL queries.",
-                "Collaborate with a 6-member Agile team to ship features reliably."
+                "Delivered 3–4 end-to-end bug/complex CRs and 25–30 smaller CRs, plus complex business-logic features with role-based access.",
+                "Designed and built the end-to-end outlet onboarding flow (registration, supplier mapping, client approval/rejection) using Spring Boot, Kafka, and NiFi — onboarding 100K outlets.",
+                "Cut API and report latency from 5–6 seconds to under 300 ms with Redis caching, MySQL query tuning, and removing pipeline bottlenecks.",
+                "Engineered event-driven data pipelines with Apache NiFi, Kafka, and REST APIs feeding downstream Flink processing — validation, enrichment, and transformation across MySQL/MSSQL for 4–5 crore records/day.",
+                "Built an end-to-end historical sales data integration: NiFi stages daily CSVs to AWS S3, a job loads them into Amazon Redshift, and DynamoDB tracks processed files so daily runs never reprocess data.",
+                "Built MDM workflows (Excel-based ingestion, templates, validation) and 8+ Jasper Reports to reduce manual reporting effort.",
+                "Built NiFi monitoring flows with Slack/email alerts and DB flags; resolved production incidents using CloudWatch, Kafka, and SQL analysis.",
+                "Integrated sales-rep features into the Unnati PWA (login flow, data management, contest enrollment); shipped via Jenkins CI/CD with cron-scheduled jobs."
             ]
         }
     ],
@@ -98,22 +103,32 @@ const resumeData = {
         {
             category: "Languages",
             cssClass: "lang",
-            items: ["C", "C++", "Java", "Python", "JavaScript", "SQL", "HTML/CSS"]
+            items: ["Java", "SQL", "Python", "JavaScript", "C++"]
         },
         {
             category: "Backend & APIs",
             cssClass: "backend",
-            items: ["Spring Boot", "Express.js", "Flask", "REST API Design"]
+            items: ["Spring Boot", "REST APIs", "Microservices", "Node.js/Express", "Flask"]
         },
         {
-            category: "Databases & Data",
+            category: "Messaging & Integration",
             cssClass: "data",
-            items: ["MySQL", "MongoDB", "Database Design", "Jolt", "Jasper Reports", "Apache NiFi"]
+            items: ["Apache Kafka", "Apache NiFi", "Redis", "Jolt"]
         },
         {
-            category: "ML & Tools",
+            category: "Databases",
+            cssClass: "data",
+            items: ["MySQL", "MSSQL", "MongoDB", "DynamoDB", "Amazon Redshift"]
+        },
+        {
+            category: "Cloud & DevOps",
+            cssClass: "backend",
+            items: ["AWS (S3, DynamoDB, Redshift, CloudWatch)", "Jenkins CI/CD", "Git", "Linux"]
+        },
+        {
+            category: "ML & Other",
             cssClass: "ml",
-            items: ["TensorFlow", "Keras", "CTGAN", "Git", "VS Code", "Linux basics"]
+            items: ["TensorFlow", "Keras", "Jasper Reports", "Data Structures & Algorithms"]
         }
     ],
     achievements: [
@@ -142,7 +157,8 @@ const resumeData = {
     ],
     resume: {
         file: "",
-        displayName: "Resume_Vedant_Singh_Chauhan_213.pdf"
+        displayName: "Resume_Vedant_Singh_Chauhan.pdf",
+        driveLink: ""
     }
 };
 
@@ -161,9 +177,11 @@ function applyLinkConfig() {
         resumeData.resume.displayName =
             linkConfig.resumePdf.split("/").pop() || linkConfig.resumePdf;
     } else {
-        resumeData.resume.file = "Resume_Vedant_Singh_Chauhan_213.pdf";
-        resumeData.resume.displayName = "Resume_Vedant_Singh_Chauhan_213.pdf";
+        resumeData.resume.file = "Resume_Vedant_Singh_Chauhan.pdf";
+        resumeData.resume.displayName = "Resume_Vedant_Singh_Chauhan.pdf";
     }
+
+    resumeData.resume.driveLink = linkConfig.resumeDrive || "";
 }
 
 function getProfilePhoto() {
@@ -741,6 +759,13 @@ function renderResumeSection(container) {
         className: "resume-fallback",
         html: `If the resume does not load, <a href="${resumeData.resume.file}" target="_blank" rel="noopener noreferrer">click here to open ${resumeData.resume.displayName}</a>.`
     }));
+
+    if (resumeData.resume.driveLink) {
+        section.appendChild(createElement("p", {
+            className: "resume-fallback",
+            html: `Prefer Google Drive? <a href="${resumeData.resume.driveLink}" target="_blank" rel="noopener noreferrer">View on Google Drive ↗</a>.`
+        }));
+    }
 
     container.appendChild(section);
 }
