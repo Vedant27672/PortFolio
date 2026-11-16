@@ -751,6 +751,20 @@ function renderResumeSection(container) {
         html: `If the resume does not load, <a href="${resumeData.resume.file}" target="_blank" rel="noopener noreferrer">click here to open ${resumeData.resume.displayName}</a>.`
     }));
 
+    if (linkConfig.resumeDrive) {
+        const driveLink = createElement("a", {
+            text: "View on Google Drive ↗",
+            attrs: {
+                href: linkConfig.resumeDrive,
+                target: "_blank",
+                rel: "noopener noreferrer"
+            }
+        });
+        const fallback = createElement("p", { className: "resume-fallback" });
+        fallback.appendChild(driveLink);
+        section.appendChild(fallback);
+    }
+
     container.appendChild(section);
 }
 
