@@ -151,7 +151,7 @@ const resumeData = {
             title: "Full-Stack Web Dev",
             detail:
                 "Completed a full-stack web development course and put it into practice through real deployed projects.",
-            link: "https://drive.google.com/file/d/1bL8lF9IzDSUDV381Z_tF4mNATMbVuWCX/view?usp=sharing"
+            link: "https://drive.google.com/file/d/15k8a1U_43XkUHQWrMCiVfHuAOQ8cvnaG/view?usp=sharing"
         }
     ],
     resume: {
