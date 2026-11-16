@@ -1,6 +1,6 @@
 # Hi, I'm Vedant Singh Chauhan 👋
 
-**Software Engineer** at Salescode.ai | Passionate about Java Spring Boot, Data Pipelines, and ML-backed Web Apps
+**Backend Software Engineer** | Java Spring Boot, event-driven data pipelines, and AWS
 
 📧 vedant2004chauhan@gmail.com | 📱 +91-8924029890  
 🔗 [LinkedIn](https://www.linkedin.com/in/vedant-singh-chauhan-417a10248) | 🌐 [Portfolio](https://portfolio-vedant.onrender.com/) | 💻 [GitHub](https://github.com/Vedant27672)

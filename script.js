@@ -4,9 +4,9 @@ let linkConfig = {};
 // ------- STATS DATA ------- //
 const statsData = [
     { value: 2.5, suffix: "M",   label: "Retailers Served",   decimals: 1 },
-    { value: 100, suffix: "K+",  label: "Outlets Onboarded",  decimals: 0 },
-    { value: 5,   suffix: "Cr+", label: "Records Processed/Day", decimals: 0 },
-    { value: 300, suffix: "ms",  label: "API Latency (p95)",  decimals: 0 }
+    { value: 100, suffix: "K",  label: "Outlets Onboarded",  decimals: 0 },
+    { text: "4–5 crore", label: "Records Processed/Day" },
+    { text: "Under 300 ms", label: "API & Report Latency" }
 ];
 
 // ------- TYPING ANIMATION ROLES ------- //
@@ -41,18 +41,18 @@ const resumeData = {
             role: "Software Engineer (Backend)",
             company: "Salescode.ai",
             location: "Gurgaon, Haryana · On-site",
-            duration: "June 2025 – Present",
+            duration: "June 2025 – September 2026",
             summary:
-                "Building Java Spring Boot microservices and REST APIs for ITC Unnati, a B2B eCommerce platform serving 2.5M retailers/outlets, in a 6-member Agile team.",
+                "Built and maintained Java Spring Boot microservices and REST APIs for ITC Unnati, a B2B eCommerce platform serving 2.5M retailers/outlets, in a 6-member Agile team.",
             highlights: [
-                "Delivered 3–4 end-to-end bug/complex CRs and 25–30 smaller CRs, plus complex business-logic features with role-based access.",
+                "Delivered 3–4 complex CRs and 25–30 smaller CRs covering backend features, bug fixes, and business logic changes.",
                 "Designed and built the end-to-end outlet onboarding flow (registration, supplier mapping, client approval/rejection) using Spring Boot, Kafka, and NiFi — onboarding 100K outlets.",
                 "Cut API and report latency from 5–6 seconds to under 300 ms with Redis caching, MySQL query tuning, and removing pipeline bottlenecks.",
                 "Engineered event-driven data pipelines with Apache NiFi, Kafka, and REST APIs feeding downstream Flink processing — validation, enrichment, and transformation across MySQL/MSSQL for 4–5 crore records/day.",
-                "Built an end-to-end historical sales data integration: NiFi stages daily CSVs to AWS S3, a job loads them into Amazon Redshift, and DynamoDB tracks processed files so daily runs never reprocess data.",
-                "Built MDM workflows (Excel-based ingestion, templates, validation) and 8+ Jasper Reports to reduce manual reporting effort.",
-                "Built NiFi monitoring flows with Slack/email alerts and DB flags; resolved production incidents using CloudWatch, Kafka, and SQL analysis.",
-                "Integrated sales-rep features into the Unnati PWA (login flow, data management, contest enrollment); shipped via Jenkins CI/CD with cron-scheduled jobs."
+                "Built an end-to-end historical sales data integration: NiFi stages daily CSVs to AWS S3, a job loads them into Amazon Redshift, and DynamoDB tracks processed files so daily Kafka and CSV runs never reprocess data.",
+                "Built MDM workflows for Excel ingestion, templates, cards, validation, enrichment, and transformation. Built 8+ Jasper Reports using SQL and custom Java logic.",
+                "Built NiFi monitoring flows with Slack/email alerts and DB flags; resolved production incidents using CloudWatch, Kafka, and SQL analysis. Used existing Jenkins CI/CD jobs for service deployments and restarts.",
+                "Integrated sales-rep features into the Unnati PWA (login flow, data management, and outlet contest enrollment)."
             ]
         }
     ],
@@ -61,41 +61,30 @@ const resumeData = {
             degree: "B.Tech · Computer Science and Engineering",
             institution: "Jaypee Institute of Information Technology, Noida",
             duration: "2022 – 2026",
-            extra: "Current CGPA: 8.0 / 10"
+            extra: "CGPA: 8.2/10"
         },
         {
-            degree: "Intermediate (ISC)",
+            degree: "ISC (Class XII)",
             institution: "City Montessori School, Lucknow",
-            duration: "2021 – 2022",
+            duration: "2022",
             extra: "Percentage: 96.5%"
         }
     ],
     projects: [
         {
-            key: "projectCampease",
             name: "CampEase",
             description:
-                "A full-stack platform for finding and managing campgrounds with authentication, reviews, and a smooth booking flow.",
-            url: "",
+                "A campground booking platform with listings, reviews, and search. It uses Passport.js for local and Google OAuth sign-in, owner-based permissions, Joi validation for REST APIs, Cloudinary image uploads, and Swagger API documentation.",
+            links: { "Live demo": "projectCampease", "GitHub": "projectCampeaseGitHub" },
             tags: ["Node.js", "Express", "MongoDB", "EJS", "Auth"],
             status: "Live"
         },
         {
-            key: "projectPcosBlockchain",
-            name: "PCOS Synthetic Dataset & Blockchain Storage",
-            description:
-                "Experimental system that generates synthetic medical datasets (PCOS) using CTGAN and stores metadata on a custom blockchain for integrity.",
-            url: "",
-            tags: ["Flask", "CTGAN", "Blockchain", "MongoDB"],
-            status: "Research"
-        },
-        {
-            key: "projectPcosDetection",
             name: "PCOS Detection Tool",
             description:
-                "Ultrasound image classifier with MobileNet and Grad-CAM visualizations so doctors can see why a prediction is made.",
-            url: "",
-            tags: ["Flask", "MobileNet", "Grad-CAM", "TensorFlow"],
+                "Fine-tuned MobileNet for PCOS classification, reaching 75% accuracy on a held-out set of 20,000 ultrasound images. A Flask app displays Grad-CAM explanations. Related research generated 100+ synthetic patient records with CTGAN and stored them in a custom SHA-256 blockchain ledger backed by MongoDB.",
+            links: { "Live demo": "projectPcosDetection", "GitHub": "projectPcosDetectionGitHub", "IC3 paper": "pcosPaper", "Blockchain repo": "projectPcosBlockchain" },
+            tags: ["Flask", "MobileNet", "Grad-CAM", "TensorFlow", "CTGAN", "Blockchain", "MongoDB"],
             status: "Live"
         }
     ],
@@ -121,22 +110,32 @@ const resumeData = {
             items: ["MySQL", "MSSQL", "MongoDB", "DynamoDB", "Amazon Redshift"]
         },
         {
-            category: "Cloud & DevOps",
+            category: "Cloud",
             cssClass: "backend",
-            items: ["AWS (S3, DynamoDB, Redshift, CloudWatch)", "Jenkins CI/CD", "Git", "Linux"]
+            items: ["AWS (S3, DynamoDB, Redshift, CloudWatch)"]
         },
         {
-            category: "ML & Other",
+            category: "Tools",
+            cssClass: "backend",
+            items: ["Git", "Jenkins CI/CD", "Jasper Reports", "Linux"]
+        },
+        {
+            category: "Fundamentals",
+            cssClass: "backend",
+            items: ["Data Structures & Algorithms", "OOP", "Database Design", "Agile"]
+        },
+        {
+            category: "Machine Learning",
             cssClass: "ml",
-            items: ["TensorFlow", "Keras", "Jasper Reports", "Data Structures & Algorithms"]
+            items: ["TensorFlow", "Keras"]
         }
     ],
     achievements: [
         {
             title: "IC3 2025 Paper Acceptance",
             detail:
-                "Paper on the PCOS Detection Tool accepted at the IC3 2025 conference, focusing on explainable AI in medical imaging.",
-            link: "https://drive.google.com/file/d/18CDeVRNe5u1YFrjGy5-y4NpHcm3ZXC1m/view?usp=drive_link"
+                "The PCOS Detection Tool paper was accepted at IC3 2025, ranking in the top 12% of 481+ submissions.",
+            linkKey: "pcosPaper"
         },
         {
             title: "Ride-Hack 2024 · Top 10",
@@ -157,8 +156,7 @@ const resumeData = {
     ],
     resume: {
         file: "",
-        displayName: "Resume_Vedant_Singh_Chauhan.pdf",
-        driveLink: ""
+        displayName: "Resume_Vedant_Singh_Chauhan.pdf"
     }
 };
 
@@ -168,8 +166,8 @@ function applyLinkConfig() {
         if (p.key && linkConfig[p.key]) p.url = linkConfig[p.key];
     });
 
-    resumeData.projects.forEach((proj) => {
-        if (proj.key && linkConfig[proj.key]) proj.url = linkConfig[proj.key];
+    resumeData.achievements.forEach((achievement) => {
+        if (achievement.linkKey) achievement.link = linkConfig[achievement.linkKey];
     });
 
     if (linkConfig.resumePdf) {
@@ -180,8 +178,6 @@ function applyLinkConfig() {
         resumeData.resume.file = "Resume_Vedant_Singh_Chauhan.pdf";
         resumeData.resume.displayName = "Resume_Vedant_Singh_Chauhan.pdf";
     }
-
-    resumeData.resume.driveLink = linkConfig.resumeDrive || "";
 }
 
 function getProfilePhoto() {
@@ -614,26 +610,21 @@ function renderProjectsSection(container) {
         });
         card.appendChild(tagsDiv);
 
-        // Footer with link
+        // Project links
         const footer = createElement("div", { className: "card-footer" });
-        let link;
-        if (project.url && project.url !== "#") {
-            link = createElement("a", {
+        for (const [label, configKey] of Object.entries(project.links)) {
+            const url = linkConfig[configKey];
+            if (!url) continue;
+            footer.appendChild(createElement("a", {
                 className: "card-link",
-                text: "Open project ↗",
+                text: label + " ↗",
                 attrs: {
-                    href: project.url,
+                    href: url,
                     target: "_blank",
                     rel: "noopener noreferrer"
                 }
-            });
-        } else {
-            link = createElement("span", {
-                className: "card-subtitle",
-                text: "Demo coming soon"
-            });
+            }));
         }
-        footer.appendChild(link);
         card.appendChild(footer);
 
         cardList.appendChild(card);
@@ -760,13 +751,6 @@ function renderResumeSection(container) {
         html: `If the resume does not load, <a href="${resumeData.resume.file}" target="_blank" rel="noopener noreferrer">click here to open ${resumeData.resume.displayName}</a>.`
     }));
 
-    if (resumeData.resume.driveLink) {
-        section.appendChild(createElement("p", {
-            className: "resume-fallback",
-            html: `Prefer Google Drive? <a href="${resumeData.resume.driveLink}" target="_blank" rel="noopener noreferrer">View on Google Drive ↗</a>.`
-        }));
-    }
-
     container.appendChild(section);
 }
 
@@ -839,21 +823,18 @@ function renderFooter(container) {
 function renderStatsStrip(container) {
     const strip = createElement("div", { className: "stats-strip" });
 
-    statsData.forEach((stat, idx) => {
+    statsData.forEach((stat) => {
         const item = createElement("div", { className: "stat-item" });
 
         const value = createElement("span", {
             className: "stat-value",
-            attrs: {
+            attrs: stat.text ? {} : {
                 "data-target":   String(stat.value),
                 "data-suffix":   stat.suffix,
                 "data-decimals": String(stat.decimals)
             }
         });
-        // Placeholder before counter kicks in
-        value.textContent = stat.decimals > 0
-            ? stat.value.toFixed(stat.decimals) + stat.suffix
-            : "0" + stat.suffix;
+        value.textContent = stat.text ?? (stat.value.toFixed(stat.decimals) + stat.suffix);
 
         const label = createElement("span", { className: "stat-label", text: stat.label });
 

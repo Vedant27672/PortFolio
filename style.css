@@ -672,7 +672,8 @@ body.light-theme .card-subtitle { color: var(--text-muted); }
     margin-top: auto;
     padding-top: 0.7rem;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     align-items: flex-end;
     gap: 0.5rem;
     font-size: 0.78rem;
